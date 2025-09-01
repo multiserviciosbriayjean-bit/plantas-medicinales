@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantas Medicinales</title>
+    <meta name="theme-color" content="#4CAF50" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icon-192.png" />
+    <meta name="description" content="Buscador de plantas medicinales con beneficios y preparación."/>
+    <style>
+      :root{--green:#4CAF50;}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:#f8fafc;color:#111}
+      .container{min-height:100svh;display:flex;flex-direction:column;align-items:center;padding:20px 12px}
+      .logo{font-size:34px;font-weight:700;margin:28px 0 8px;letter-spacing:-.5px}
+      .logo span:nth-child(1){color:var(--green)}
+      .logo span:nth-child(2){color:#111}
+      .searchbar{width:100%;max-width:720px;padding:0 12px}
+      .searchbar .box{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #e6edf0;border-radius:9999px;padding:12px 14px;box-shadow:0 2px 6px rgba(16,24,40,.04)}
+      .searchbar input{flex:1;border:none;outline:none;font-size:16px;background:transparent}
+      .btn{border:none;border-radius:9999px;padding:8px 14px;background:var(--green);color:#fff;font-weight:600;cursor:pointer}
+      .results{width:100%;max-width:920px;padding:12px 16px 120px}
+      .card{background:#fff;border:1px solid #eef2f6;border-radius:14px;padding:12px;box-shadow:0 2px 8px rgba(2,6,23,.04);margin-bottom:12px}
+      .card h3{margin:6px 0 4px;font-size:18px}
+      .muted{color:#6b7280;font-size:13px}
+      .thumb{width:100%;height:140px;object-fit:cover;border-radius:10px;border:1px solid #eee;margin-top:8px}
+      .fab{position:fixed;right:18px;bottom:18px;border:none;border-radius:9999px;background:#111;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(2,6,23,.25);opacity:.28;transition:opacity .15s ease, transform .08s ease;z-index:60}
+      .fab:hover{opacity:.9;transform:scale(1.03);cursor:pointer}
+      .panel{width:100%;max-width:920px;padding:12px 16px;position:fixed;left:50%;transform:translateX(-50%);bottom:86px;background:#fff;border:1px solid #e6edf0;border-radius:12px;box-shadow:0 18px 46px rgba(2,6,23,.18);z-index:59}
+      .row{display:grid;grid-template-columns:1fr;gap:8px}
+      @media (min-width:640px){.row{grid-template-columns:1fr 1fr}}
+      .input,.textarea{width:100%;border:1px solid #e6edf0;border-radius:10px;padding:10px 12px;font-size:14px;background:#fff}
+      .textarea{min-height:80px;resize:vertical}
+      .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+      .chip{background:#eef7ef;border:1px solid #d7f0d7;color:#1a7a1f;padding:6px 10px;border-radius:9999px;font-size:12px}
+      .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+      .btn-secondary{background:#111;color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+      .btn-ghost{background:#f1f5f9;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+      .small{font-size:12px;color:#6b7280}
+    </style>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root" class="container"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
